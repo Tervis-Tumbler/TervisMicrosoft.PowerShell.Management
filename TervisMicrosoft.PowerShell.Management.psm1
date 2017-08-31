@@ -26,7 +26,7 @@ Function Get-PendingRestart
     A single path to send error data to a log file.
 
 .EXAMPLE
-    PS C:\> Get-PendingReboot -ComputerName (Get-Content C:\ServerList.txt) | Format-Table -AutoSize
+    PS C:\> Get-PendingRestart -ComputerName (Get-Content C:\ServerList.txt) | Format-Table -AutoSize
 	
     Computer CBServicing WindowsUpdate CCMClientSDK PendFileRename PendFileRenVal RebootPending
     -------- ----------- ------------- ------------ -------------- -------------- -------------
@@ -40,7 +40,7 @@ Function Get-PendingRestart
     nor was the PendingFileRenameOperations value populated.
 
 .EXAMPLE
-    PS C:\> Get-PendingReboot
+    PS C:\> Get-PendingRestart
 	
     Computer           : WKS01
     CBServicing        : False
@@ -55,7 +55,7 @@ Function Get-PendingRestart
 	
 .EXAMPLE
     PS C:\> $Servers = Get-Content C:\Servers.txt
-    PS C:\> Get-PendingReboot -Computer $Servers | Export-Csv C:\PendingRebootReport.csv -NoTypeInformation
+    PS C:\> Get-PendingRestart -Computer $Servers | Export-Csv C:\PendingRebootReport.csv -NoTypeInformation
 	
     This example will create a report that contains pending reboot information.
 
@@ -217,7 +217,7 @@ Process {
 
 End {  }## End End
 
-}## End Function Get-PendingReboot
+}## End Function Get-PendingRestart
 
 function Uninstall-Hotfix {
     [cmdletbinding()]
