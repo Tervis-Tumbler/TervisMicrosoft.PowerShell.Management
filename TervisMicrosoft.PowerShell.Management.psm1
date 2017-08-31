@@ -246,3 +246,25 @@ function Uninstall-Hotfix {
         return
     }
 }
+
+function Replace-ContentValue {
+    param (
+        [Parameter(Mandatory, ValueFromPipeline)][String[]]$Content,
+        [Parameter(Mandatory)]$OldValue,
+        [Parameter(Mandatory)]$NewValue
+    )
+    process {
+        $Content.replace($OldValue, $NewValue)
+    }
+}
+
+function Remove-ContentValue {
+    param (
+        [Parameter(Mandatory, ValueFromPipeline)][String[]]$Content,
+        [Parameter(Mandatory)]$Value
+    )
+    process {
+        $Content | Replace-ContentValue -OldValue $Value -NewValue ""
+    }
+
+}
