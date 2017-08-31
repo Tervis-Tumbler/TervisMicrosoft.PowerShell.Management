@@ -1,4 +1,4 @@
-Function Get-PendingReboot
+Function Get-PendingRestart
 {
 <#
 .SYNOPSIS
