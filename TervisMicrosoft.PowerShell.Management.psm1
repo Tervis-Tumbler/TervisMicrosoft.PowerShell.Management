@@ -274,7 +274,7 @@ function ConvertTo-RemotePath {
         [Parameter(Mandatory)]$ComputerName
     )
     process {
-        "\\$ComputerName\$($Path-replace ":","$")"
+        "\\$ComputerName\$($Path -replace ":","$")"
     }
 }
 
